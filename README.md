@@ -2,6 +2,21 @@
 
 ## `@injectivelabs/sdk-ts`
 
+```ts
+import { MsgSend } from "@injectivelabs/sdk-ts";
+
+console.log(
+  MsgSend.fromJSON({
+    amount: {
+      amount: "1",
+      denom: "",
+    },
+    srcInjectiveAddress: "",
+    dstInjectiveAddress: "",
+  })
+);
+```
+
 ```sh
 pnpm esbuild ./src/injectivesdk.ts --outdir='.tmp' --bundle --minify --platform='node'
 # .tmp/injectivesdk.js  8.2mb
@@ -11,6 +26,23 @@ pnpm esbuild ./src/injectivesdk.ts --outdir='.tmp' --bundle --minify --platform=
 ```
 
 ## `cosmes`
+
+```ts
+import { MsgSend } from "cosmes/client";
+
+console.log(
+  new MsgSend({
+    amount: [
+      {
+        amount: "1",
+        denom: "",
+      },
+    ],
+    fromAddress: "",
+    toAddress: "",
+  })
+);
+```
 
 ```sh
 pnpm esbuild ./src/cosmes.ts --outdir='.tmp' --bundle --minify --platform='node'
